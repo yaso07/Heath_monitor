@@ -4,6 +4,7 @@ import type React from "react"
 import Navigation from "./components/Navigation"
 import ProgressBarProvider from "./components/ProgressBarProvider"
 import Providers from "./providers"
+import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,7 +24,10 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-100 text-gray-900`}>
         <Providers>
           <Navigation />
+          <Suspense>
           <ProgressBarProvider />
+          </Suspense>
+         
           <main className="flex-grow">{children}</main>
           <footer className="bg-gray-800 text-white py-4 mt-auto">
           <div className="container mx-auto px-4 text-center">

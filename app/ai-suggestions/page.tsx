@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import AISuggestionForm from "../components/AISuggestionForm"
 import AISuggestions from "../components/AISuggestions"
 
@@ -11,7 +12,10 @@ export default function AISuggestionsPage() {
         </p>
         <AISuggestionForm />
       </section>
+      <Suspense>
       <AISuggestions />
+      </Suspense>
+    
     </div>
   )
 }

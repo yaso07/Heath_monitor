@@ -1,5 +1,6 @@
 import FreeAIForm from "../components/FreeAIForm"
 import AIAdvice from "../components/AIAdvice"
+import { Suspense } from "react"
 
 export default function FreeAIAdvisorPage() {
   return (
@@ -11,7 +12,10 @@ export default function FreeAIAdvisorPage() {
         </p>
         <FreeAIForm />
       </section>
+      <Suspense>
       <AIAdvice />
+      </Suspense>
+   
     </div>
   )
 }
